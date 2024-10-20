@@ -1,97 +1,62 @@
 // trading_system.cpp
 #include <iostream>
-
+#include <sstream>
+#include <string>
+#include <unordered_map>
 #include "trading_system.hpp"
 
 
 TradingSystem::TradingSystem(const std::string & host): host_(host), client_(host.c_str()) {}
 
 
-#include <sstream>
-#include <string>
-#include <unordered_map>
-#include <optional>
-
-std::string buildQueryString(const std::unordered_map<std::string, std::string>& params) {
-    std::ostringstream query;
-    bool first = true;
-
-    for (const auto& [key, value] : params) {
-        if (first) {
-            first = false; 
-        } else {
-            query << "&"; 
-        }
-        query << key << "=" << value;
-    }
-    return query.str();
-}
-
+ 
 // Place Order
-json TradingSystem::buy(const std::string& instrument_name, float amount,unsigned int price, const std::string& label, const std::string& type)
- {
-   std::string endpoint = "/api/v2/private/buy?amount=" + std::to_string(amount) +
-    "&instrument_name=" + instrument_name +
-    "&label=" + label +
-    "&type=" + type +
-    "&price=" + std::to_string(price);
-;
+json TradingSystem::buy(const std::unordered_map<std::string, std::string>& params) {
+        std::string endpoint = "/api/v2/private/buy?" + buildQueryString(params);
+        json response = sendGetRequest(endpoint); // Changed to POST for buying
+        return response;
+    }
 
-   json response = sendGetRequest(endpoint);
-  return response;
-}
+//  Sell order
+json TradingSystem::sell(const std::unordered_map<std::string, std::string>& params) {
+        std::string endpoint = "/api/v2/private/sell?" + buildQueryString(params);
+        json response = sendGetRequest(endpoint); // Changed to POST for selling
+        return response;
+    }
 
-// Implementation of sell (assuming the sell endpoint follows a similar pattern)
-json TradingSystem::sell(const std::string& instrument_name, float amount, unsigned int price, const std::string& label, const std::string& type){
-   std::string endpoint = "/api/v2/private/sell?amount=" + std::to_string(amount) +
-    "&instrument_name=" + instrument_name +
-    "&label=" + label +
-    "&type=" + type + 
-    "&price=" + std::to_string(price);
-
-  json response = sendGetRequest(endpoint);
-  return response;
-}
 
 // Cancel Order
-json TradingSystem::cancelOrder(const std::string & orderId) {
-   std::string endpoint = "/api/v2/private/cancel?order_id=" + orderId;
+json TradingSystem::cancelOrder(const std::unordered_map<std::string, std::string>& params) {
+  std::string endpoint = "/api/v2/private/cancel?" + buildQueryString(params);
 
   json response = sendGetRequest(endpoint);
 
-   std::cout << "Cancel Order Response: " << response.dump(4) << std::endl;
 
    return response;
 }
 
 // Modify Order
-json TradingSystem::modifyOrder(const std::string & orderId, unsigned int newPrice, float newamount) {
-   std::string endpoint = "/api/v2/private/edit?advanced=implv&amount=" + std::to_string(newamount) +
-    "&order_id=" + orderId + "&price=" + std::to_string(newPrice);
-
+json TradingSystem::modifyOrder(const std::unordered_map<std::string, std::string>& params) {
+    std::string endpoint = "/api/v2/private/edit?" + buildQueryString(params);
    json response = sendGetRequest(endpoint);
 
-   std::cout << "Modify Order Response: " << response.dump(4) << std::endl;
 
   return response;
 }
 
 // Get Orderbook
-json TradingSystem::getOrderbook(const std::string & instrument_name) {
-  std::string endpoint = "/api/v2/public/get_order_book?instrument_name=" + instrument_name;
+json TradingSystem::getOrderbook(const std::unordered_map<std::string, std::string>& params) {
+     std::string endpoint = "/api/v2/public/get_order_book?" + buildQueryString(params);
+
   json response = sendGetRequest(endpoint);
-  std::cout << "Orderbook: " << response.dump(4) << std::endl;
   return response;
 }
 
-json TradingSystem::viewCurrentPositions(const std::string & currency = nullptr,
-  const std::string & kind = nullptr) {
+json TradingSystem::viewCurrentPositions(const std::unordered_map<std::string, std::string>& params) {
    
-  std::string endpoint = "/api/v2/private/get_positions?currency=" + currency + "&kind=" + kind;
-
+    std::string endpoint = "/api/v2/private/get_positions?" + buildQueryString(params);
    json response = sendGetRequest(endpoint);
 
-   std::cout << "Get Positions Response: " << response.dump(4) << std::endl;
 
    return response;
 }
@@ -227,6 +192,18 @@ void TradingSystem::refreshAuthToken() {
         std::cerr << "Failed to refresh auth token." << std::endl;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // Send a POST request with a JSON payload
 // json TradingSystem::sendPostRequest(const std::string& endpoint, const json& payload) {

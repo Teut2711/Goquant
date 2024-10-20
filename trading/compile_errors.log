@@ -1,205 +1,34 @@
-src/trading_system.cpp: In member function 'json TradingSystem::buy(const std::string&, float, unsigned int, const std::string&, const std::string&)':
-src/trading_system.cpp:40:89: warning: unused parameter 'price' [-Wunused-parameter]
-   40 |   json TradingSystem::buy(const std::string& instrument_name, float amount,unsigned int price, const std::string& label, const std::string& type)
-      |                                                                            ~~~~~~~~~~~~~^~~~~
-src/trading_system.cpp: In member function 'json TradingSystem::sell(const std::string&, float, unsigned int, const std::string&, const std::string&)':
-src/trading_system.cpp:60:15: error: no match for 'operator+' (operand types are 'std::__cxx11::basic_string<char>' and 'unsigned int')
-   56 |   std::string endpoint = "/api/v2/private/sell?amount=" + std::to_string(amount) +
-      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   57 |     "&instrument_name=" + instrument_name +
-      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   58 |     "&label=" + label +
-      |     ~~~~~~~~~~~~~~~~~~~
-   59 |     "&type=" + type +
-      |     ~~~~~~~~~~~~~~~~~
-      |                     |
-      |                     std::__cxx11::basic_string<char>
-   60 |     "&price=" + price;
-      |     ~~~~~~~~~ ^ ~~~~~
-      |                 |
-      |                 unsigned int
-In file included from /usr/include/c++/12/string:47,
-                 from /usr/include/c++/12/bits/locale_classes.h:40,
-                 from /usr/include/c++/12/bits/ios_base.h:41,
-                 from /usr/include/c++/12/ios:42,
-                 from /usr/include/c++/12/ostream:38,
-                 from /usr/include/c++/12/iostream:39,
-                 from src/trading_system.cpp:2:
-/usr/include/c++/12/bits/stl_iterator.h:630:5: note: candidate: 'template<class _Iterator> constexpr std::reverse_iterator<_IteratorL> std::operator+(typename reverse_iterator<_IteratorL>::difference_type, const reverse_iterator<_IteratorL>&)'
-  630 |     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/stl_iterator.h:630:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::reverse_iterator<_IteratorL>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/stl_iterator.h:1786:5: note: candidate: 'template<class _Iterator> constexpr std::move_iterator<_IteratorL> std::operator+(typename move_iterator<_IteratorL>::difference_type, const move_iterator<_IteratorL>&)'
- 1786 |     operator+(typename move_iterator<_Iterator>::difference_type __n,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/stl_iterator.h:1786:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::move_iterator<_IteratorL>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-In file included from /usr/include/c++/12/string:53:
-/usr/include/c++/12/bits/basic_string.h:3432:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const __cxx11::basic_string<_CharT, _Traits, _Allocator>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
- 3432 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3432:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-In file included from /usr/include/c++/12/string:54:
-/usr/include/c++/12/bits/basic_string.tcc:606:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
-  606 |     operator+(const _CharT* __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.tcc:606:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.tcc:627:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
-  627 |     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.tcc:627:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3472:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const __cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)'
- 3472 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3472:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const _CharT*' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3489:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const __cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)'
- 3489 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3489:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   deduced conflicting types for parameter '_CharT' ('char' and 'unsigned int')
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3502:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
- 3502 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3502:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3509:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const __cxx11::basic_string<_CharT, _Traits, _Allocator>&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
- 3509 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3509:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3516:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, __cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
- 3516 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3516:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3539:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, __cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
- 3539 |     operator+(const _CharT* __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3539:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_string<char>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3546:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, __cxx11::basic_string<_CharT, _Traits, _Allocator>&&)'
- 3546 |     operator+(_CharT __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3546:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Allocator>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3553:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const _CharT*)'
- 3553 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3553:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const _CharT*' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/basic_string.h:3560:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> constexpr std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, _CharT)'
- 3560 |     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
-      |     ^~~~~~~~
-/usr/include/c++/12/bits/basic_string.h:3560:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   deduced conflicting types for parameter '_CharT' ('char' and 'unsigned int')
-   60 |     "&price=" + price;
-      |                 ^~~~~
-In file included from /usr/include/c++/12/valarray:603,
-                 from include/nlohmann/detail/conversions/from_json.hpp:21,
-                 from include/nlohmann/adl_serializer.hpp:14,
-                 from include/nlohmann/json.hpp:34,
-                 from src/trading_system.hpp:9,
-                 from src/trading_system.cpp:4:
-/usr/include/c++/12/bits/valarray_after.h:405:5: note: candidate: 'template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__plus, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__plus, typename _Dom1::value_type>::result_type> std::operator+(const _Expr<_Dom1, typename _Dom1::value_type>&, const _Expr<_Dom2, typename _Dom2::value_type>&)'
-  405 |     _DEFINE_EXPR_BINARY_OPERATOR(+, struct std::__plus)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   'std::__cxx11::basic_string<char>' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note: candidate: 'template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__plus, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__plus, typename _Dom1::value_type>::result_type> std::operator+(const _Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)'
-  405 |     _DEFINE_EXPR_BINARY_OPERATOR(+, struct std::__plus)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   'std::__cxx11::basic_string<char>' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note: candidate: 'template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__plus, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__plus, typename _Dom1::value_type>::result_type> std::operator+(const typename _Dom::value_type&, const _Expr<_Dom1, typename _Dom1::value_type>&)'
-  405 |     _DEFINE_EXPR_BINARY_OPERATOR(+, struct std::__plus)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::_Expr<_Dom1, typename _Dom1::value_type>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note: candidate: 'template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__plus, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__plus, typename _Dom1::value_type>::result_type> std::operator+(const _Expr<_Dom1, typename _Dom1::value_type>&, const valarray<typename _Dom::value_type>&)'
-  405 |     _DEFINE_EXPR_BINARY_OPERATOR(+, struct std::__plus)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   'std::__cxx11::basic_string<char>' is not derived from 'const std::_Expr<_Dom1, typename _Dom1::value_type>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note: candidate: 'template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__plus, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__plus, typename _Dom1::value_type>::result_type> std::operator+(const valarray<typename _Dom::value_type>&, const _Expr<_Dom1, typename _Dom1::value_type>&)'
-  405 |     _DEFINE_EXPR_BINARY_OPERATOR(+, struct std::__plus)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/bits/valarray_after.h:405:5: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::_Expr<_Dom1, typename _Dom1::value_type>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/valarray:1185:1: note: candidate: 'template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__plus, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__plus, _Tp>::result_type> std::operator+(const valarray<_Tp>&, const valarray<_Tp>&)'
- 1185 | _DEFINE_BINARY_OPERATOR(+, __plus)
-      | ^~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/valarray:1185:1: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   'std::__cxx11::basic_string<char>' is not derived from 'const std::valarray<_Tp>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/valarray:1185:1: note: candidate: 'template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__plus, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__plus, _Tp>::result_type> std::operator+(const valarray<_Tp>&, const typename valarray<_Tp>::value_type&)'
- 1185 | _DEFINE_BINARY_OPERATOR(+, __plus)
-      | ^~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/valarray:1185:1: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   'std::__cxx11::basic_string<char>' is not derived from 'const std::valarray<_Tp>'
-   60 |     "&price=" + price;
-      |                 ^~~~~
-/usr/include/c++/12/valarray:1185:1: note: candidate: 'template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__plus, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__plus, _Tp>::result_type> std::operator+(const typename valarray<_Tp>::value_type&, const valarray<_Tp>&)'
- 1185 | _DEFINE_BINARY_OPERATOR(+, __plus)
-      | ^~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/c++/12/valarray:1185:1: note:   template argument deduction/substitution failed:
-src/trading_system.cpp:60:17: note:   mismatched types 'const std::valarray<_Tp>' and 'unsigned int'
-   60 |     "&price=" + price;
-      |                 ^~~~~
+In file included from src/main.cpp:11:
+src/deribit_ws_client.cpp: In lambda function:
+src/deribit_ws_client.cpp:104:70: warning: unused parameter 'hdl' [-Wunused-parameter]
+  104 |     client.set_message_handler([&client](websocketpp::connection_hdl hdl, message_ptr msg) {
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/deribit_ws_client.cpp: In lambda function:
+src/deribit_ws_client.cpp:109:61: warning: unused parameter 'hdl' [-Wunused-parameter]
+  109 |     client.set_close_handler([](websocketpp::connection_hdl hdl) {
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
 src/main.cpp: In lambda function:
-src/main.cpp:48:34: warning: unused parameter 'req' [-Wunused-parameter]
-   48 | ([&trading](const crow::request& req, const std::string& orderId) {
-      |             ~~~~~~~~~~~~~~~~~~~~~^~~
-src/main.cpp: In lambda function:
-src/main.cpp:90:38: warning: unused parameter 'req' [-Wunused-parameter]
-   90 |     ([&trading](const crow::request& req) {
+src/main.cpp:92:38: warning: unused parameter 'req' [-Wunused-parameter]
+   92 |     ([&trading](const crow::request& req, const std::string& orderId) {
       |                 ~~~~~~~~~~~~~~~~~~~~~^~~
 src/main.cpp: In lambda function:
-src/main.cpp:48:34: warning: unused parameter 'req' [-Wunused-parameter]
-   48 | ([&trading](const crow::request& req, const std::string& orderId) {
-      |             ~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cpp:136:38: warning: unused parameter 'req' [-Wunused-parameter]
+  136 |     ([&trading](const crow::request& req) {
+      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from src/main.cpp:11:
+src/deribit_ws_client.cpp: In lambda function:
+src/deribit_ws_client.cpp:104:70: warning: unused parameter 'hdl' [-Wunused-parameter]
+  104 |     client.set_message_handler([&client](websocketpp::connection_hdl hdl, message_ptr msg) {
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/deribit_ws_client.cpp: In lambda function:
+src/deribit_ws_client.cpp:109:61: warning: unused parameter 'hdl' [-Wunused-parameter]
+  109 |     client.set_close_handler([](websocketpp::connection_hdl hdl) {
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
 src/main.cpp: In lambda function:
-src/main.cpp:90:38: warning: unused parameter 'req' [-Wunused-parameter]
-   90 |     ([&trading](const crow::request& req) {
+src/main.cpp:92:38: warning: unused parameter 'req' [-Wunused-parameter]
+   92 |     ([&trading](const crow::request& req, const std::string& orderId) {
+      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cpp: In lambda function:
+src/main.cpp:136:38: warning: unused parameter 'req' [-Wunused-parameter]
+  136 |     ([&trading](const crow::request& req) {
       |                 ~~~~~~~~~~~~~~~~~~~~~^~~

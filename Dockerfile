@@ -13,6 +13,7 @@ RUN apt-get update && \
     bash \
     libboost-all-dev \
     libssl-dev \
+    libwebsocketpp-dev \
     libcrypto++-dev/stable \
     openssl \
     && apt-get clean && \
