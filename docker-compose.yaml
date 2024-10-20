@@ -1,0 +1,13 @@
+services:
+  cpp_app:
+    container_name: goquant
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      CLIENT_ID: eVxxzNpD             # Use key-value format for environment variables
+      CLIENT_SECRET: 4xHxZrsIdP51WF_GwKmsZ-2xPvXwvTqmSQlfeKMQ7sE
+    volumes:
+      - ./trading:/trading  # Mount the trading directory to the container
+    ports:
+      - "8080:8080"  
