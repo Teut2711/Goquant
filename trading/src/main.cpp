@@ -7,10 +7,9 @@
 
 #include <iostream>
 #include <unordered_map>
-// #include <mutex>
+#include<unordered_set>
+#include <mutex>
 #include "deribit_ws_client.hpp" 
-
-
 
 int main() {
     crow::SimpleApp app;  // Create the Crow app instance
@@ -20,32 +19,46 @@ int main() {
     TradingSystem trading("https://test.deribit.com");
 
     std::mutex mtx;;
-    std::unordered_set<crow::websocket::connection*> users;
+    std::unordered_map<std::string, std::unordered_set<crow::websocket::connection&>> usersData; // Map of instrument to connected clients
+    std::atomic<bool> shouldUpdateSubscriptions{false};
+    std::thread deribitThread(subscriptionThread, std::ref(usersData), std::ref(shouldUpdateSubscriptions));
+
+
 
     CROW_ROUTE(app, "/ws")
         .websocket()
-        .onopen([&](crow::websocket::connection& conn){
+        .onopen([&](crow::websocket::connection& conn) {
             CROW_LOG_INFO << "New WebSocket connection";
-            std::lock_guard<std::mutex> lock(orderBookManager.mtx);
-            std::string clientId = /* Get client ID from the connection or message */;
-            users.insert(&conn);
-            orderBookManager.registerConnection(clientId, conn); // Register connection with its client ID
+            std::lock_guard<std::mutex> lock(mtx);
         })
-        .onclose([&](crow::websocket::connection& conn, const std::string& reason){
+        .onclose([&](crow::websocket::connection& conn, const std::string& reason) {
             CROW_LOG_INFO << "WebSocket connection closed: " << reason;
-            std::lock_guard<std::mutex> lock(orderBookManager.mtx);
-            users.erase(&conn);
-            // Optionally unregister connection
+            std::lock_guard<std::mutex> lock(mtx);
+            
+            // Remove the connection from all instruments it was subscribed to
+            for (auto& pair : usersData) {
+                pair.second.erase(&conn);  // Remove connection from each instrument's set
+            }
+
+            // Mark that the subscriptions need to be updated
+            shouldUpdateSubscriptions = true;
         })
-        .onmessage([&](crow::websocket::connection& conn, const std::string& data, bool is_binary){
-            // Handle incoming messages from clients
-            // Parse action (subscribe/unsubscribe) and call respective methods
-            // Example:
-            // orderBookManager.subscribe(clientId, symbol);
+        .onmessage([&](crow::websocket::connection& conn, const std::string& data, bool is_binary) {
+            // Parse the incoming message to get the instrument name and client ID
+            nlohmann::json message = nlohmann::json::parse(data);  // Assuming you're using nlohmann/json
+            std::string instrument_name = message["instrument_name"];
+
+            std::lock_guard<std::mutex> lock(mtx);
+
+            // Add the client connection to the map under the corresponding instrument name
+            usersData[instrument_name].insert(&conn);
+
+            // Mark that the subscriptions need to be updated
+            shouldUpdateSubscriptions = true;
+
+            CROW_LOG_INFO << "Client subscribed to instrument: " << instrument_name;
         });
-
-    std::thread deribitThread(listenToDeribit);
-
+    
     // Define a route for placing an order
     CROW_ROUTE(app, "/orders").methods("POST"_method)
     ([&trading](const crow::request& req) {
@@ -132,18 +145,11 @@ int main() {
     });
 
     // Define a simple health check route
-    CROW_ROUTE(app, "/") 
-    ([&trading](const crow::request& req) {
-        json ex1 = json::parse(R"(
-        {
-            "test": true
-        }
-        )");   
-        return crow::response(200, ex1.dump());
-    });
-
+    
     std::cout << "Starting server..." << std::endl;
     
     // Start the server
     app.port(8080).multithreaded().run();
+    deribitThread.join();
+    return 0;
 }

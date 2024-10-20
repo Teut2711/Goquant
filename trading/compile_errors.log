@@ -1,34 +1,186 @@
-In file included from src/main.cpp:11:
-src/deribit_ws_client.cpp: In lambda function:
-src/deribit_ws_client.cpp:104:70: warning: unused parameter 'hdl' [-Wunused-parameter]
-  104 |     client.set_message_handler([&client](websocketpp::connection_hdl hdl, message_ptr msg) {
-      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
-src/deribit_ws_client.cpp: In lambda function:
-src/deribit_ws_client.cpp:109:61: warning: unused parameter 'hdl' [-Wunused-parameter]
-  109 |     client.set_close_handler([](websocketpp::connection_hdl hdl) {
-      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h:33,
+                 from /usr/include/c++/12/bits/allocator.h:46,
+                 from /usr/include/c++/12/string:41,
+                 from include/crow/query_string.h:5,
+                 from include/crow.h:2,
+                 from src/main.cpp:4:
+/usr/include/c++/12/bits/new_allocator.h: In instantiation of 'class std::__new_allocator<crow::websocket::connection&>':
+/usr/include/c++/12/bits/hashtable.h:182:11:   recursively required by substitution of 'template<class _Tp, class _Up> struct std::__allocator_traits_base::__rebind<_Tp, _Up, std::__void_t<typename _Tp::rebind<_Up>::other> > [with _Tp = std::allocator<crow::websocket::connection&>; _Up = std::__detail::_Hash_node<crow::websocket::connection&, true>]'
+/usr/include/c++/12/bits/hashtable.h:182:11:   required from 'class std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >'
+/usr/include/c++/12/bits/unordered_set.h:100:18:   required from 'class std::unordered_set<crow::websocket::connection&>'
+/usr/include/c++/12/bits/stl_pair.h:192:11:   required from 'struct std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<crow::websocket::connection&> >'
+src/deribit_ws_client.hpp:68:38:   required from here
+/usr/include/c++/12/bits/new_allocator.h:63:26: error: forming pointer to reference type 'crow::websocket::connection&'
+   63 |       typedef _Tp*       pointer;
+      |                          ^~~~~~~
+/usr/include/c++/12/bits/new_allocator.h:64:26: error: forming pointer to reference type 'crow::websocket::connection&'
+   64 |       typedef const _Tp* const_pointer;
+      |                          ^~~~~~~~~~~~~
+/usr/include/c++/12/bits/new_allocator.h:112:7: error: forming pointer to reference type 'crow::websocket::connection&'
+  112 |       allocate(size_type __n, const void* = static_cast<const void*>(0))
+      |       ^~~~~~~~
+/usr/include/c++/12/bits/new_allocator.h:142:7: error: forming pointer to reference type 'crow::websocket::connection&'
+  142 |       deallocate(_Tp* __p, size_type __n __attribute__ ((__unused__)))
+      |       ^~~~~~~~~~
+/usr/include/c++/12/bits/allocator.h: In instantiation of 'class std::allocator<crow::websocket::connection&>':
+/usr/include/c++/12/bits/hashtable.h:182:11:   recursively required by substitution of 'template<class _Tp, class _Up> struct std::__allocator_traits_base::__rebind<_Tp, _Up, std::__void_t<typename _Tp::rebind<_Up>::other> > [with _Tp = std::allocator<crow::websocket::connection&>; _Up = std::__detail::_Hash_node<crow::websocket::connection&, true>]'
+/usr/include/c++/12/bits/hashtable.h:182:11:   required from 'class std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >'
+/usr/include/c++/12/bits/unordered_set.h:100:18:   required from 'class std::unordered_set<crow::websocket::connection&>'
+/usr/include/c++/12/bits/stl_pair.h:192:11:   required from 'struct std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<crow::websocket::connection&> >'
+src/deribit_ws_client.hpp:68:38:   required from here
+/usr/include/c++/12/bits/allocator.h:133:26: error: forming pointer to reference type 'crow::websocket::connection&'
+  133 |       typedef _Tp*       pointer;
+      |                          ^~~~~~~
+/usr/include/c++/12/bits/allocator.h:134:26: error: forming pointer to reference type 'crow::websocket::connection&'
+  134 |       typedef const _Tp* const_pointer;
+      |                          ^~~~~~~~~~~~~
+In file included from /usr/include/c++/12/ext/alloc_traits.h:34,
+                 from /usr/include/c++/12/bits/basic_string.h:39,
+                 from /usr/include/c++/12/string:53:
+/usr/include/c++/12/bits/alloc_traits.h: In instantiation of 'struct std::allocator_traits<std::allocator<crow::websocket::connection&> >':
+/usr/include/c++/12/bits/hashtable.h:244:55:   required from 'class std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >'
+/usr/include/c++/12/bits/unordered_set.h:100:18:   required from 'class std::unordered_set<crow::websocket::connection&>'
+/usr/include/c++/12/bits/stl_pair.h:192:11:   required from 'struct std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<crow::websocket::connection&> >'
+src/deribit_ws_client.hpp:68:38:   required from here
+/usr/include/c++/12/bits/alloc_traits.h:420:13: error: forming pointer to reference type 'crow::websocket::connection&'
+  420 |       using pointer = _Tp*;
+      |             ^~~~~~~
+/usr/include/c++/12/bits/alloc_traits.h:423:13: error: forming pointer to reference type 'crow::websocket::connection&'
+  423 |       using const_pointer = const _Tp*;
+      |             ^~~~~~~~~~~~~
+In file included from /usr/include/c++/12/unordered_map:46,
+                 from include/crow/query_string.h:7:
+/usr/include/c++/12/bits/hashtable.h: In instantiation of 'class std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >':
+/usr/include/c++/12/bits/unordered_set.h:100:18:   required from 'class std::unordered_set<crow::websocket::connection&>'
+/usr/include/c++/12/bits/stl_pair.h:192:11:   required from 'struct std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<crow::websocket::connection&> >'
+src/deribit_ws_client.hpp:68:38:   required from here
+/usr/include/c++/12/bits/hashtable.h:898:7: error: 'static std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::key_type&& std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_S_forward_key(key_type&&) [with _Key = crow::websocket::connection&; _Value = crow::websocket::connection&; _Alloc = std::allocator<crow::websocket::connection&>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<crow::websocket::connection&>; _Hash = std::hash<crow::websocket::connection&>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; key_type = crow::websocket::connection&]' cannot be overloaded with 'static const std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::key_type& std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_S_forward_key(const key_type&) [with _Key = crow::websocket::connection&; _Value = crow::websocket::connection&; _Alloc = std::allocator<crow::websocket::connection&>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<crow::websocket::connection&>; _Hash = std::hash<crow::websocket::connection&>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; key_type = crow::websocket::connection&]'
+  898 |       _S_forward_key(key_type&& __k)
+      |       ^~~~~~~~~~~~~~
+/usr/include/c++/12/bits/hashtable.h:894:7: note: previous declaration 'static const std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::key_type& std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_S_forward_key(const key_type&) [with _Key = crow::websocket::connection&; _Value = crow::websocket::connection&; _Alloc = std::allocator<crow::websocket::connection&>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<crow::websocket::connection&>; _Hash = std::hash<crow::websocket::connection&>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; key_type = crow::websocket::connection&]'
+  894 |       _S_forward_key(const key_type& __k)
+      |       ^~~~~~~~~~~~~~
+In file included from /usr/include/c++/12/unordered_set:47,
+                 from include/httplib.h:259,
+                 from src/trading_system.hpp:10,
+                 from src/main.cpp:5:
+/usr/include/c++/12/bits/unordered_set.h: In instantiation of 'class std::unordered_set<crow::websocket::connection&>':
+/usr/include/c++/12/bits/stl_pair.h:192:11:   required from 'struct std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<crow::websocket::connection&> >'
+src/deribit_ws_client.hpp:68:38:   required from here
+/usr/include/c++/12/bits/unordered_set.h:425:7: error: 'std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(value_type&&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; value_type = crow::websocket::connection&]' cannot be overloaded with 'std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; value_type = crow::websocket::connection&]'
+  425 |       insert(value_type&& __x)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:421:7: note: previous declaration 'std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; value_type = crow::websocket::connection&]'
+  421 |       insert(const value_type& __x)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:454:7: error: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const_iterator, value_type&&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator; value_type = crow::websocket::connection&]' cannot be overloaded with 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const_iterator, const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator; value_type = crow::websocket::connection&]'
+  454 |       insert(const_iterator __hint, value_type&& __x)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:450:7: note: previous declaration 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const_iterator, const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator; value_type = crow::websocket::connection&]'
+  450 |       insert(const_iterator __hint, const value_type& __x)
+      |       ^~~~~~
+In file included from /usr/include/c++/12/bits/hashtable.h:35:
+/usr/include/c++/12/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::_Node_iterator<crow::websocket::connection&, true, true>':
+src/deribit_ws_client.hpp:101:46:   required from here
+/usr/include/c++/12/bits/hashtable_policy.h:387:13: error: forming pointer to reference type 'crow::websocket::connection&'
+  387 |       using pointer = __conditional_t<__constant_iterators,
+      |             ^~~~~~~
+In file included from src/main.cpp:12:
+src/deribit_ws_client.hpp: In lambda function:
+src/deribit_ws_client.hpp:102:37: error: passing 'const crow::websocket::connection' as 'this' argument discards qualifiers [-fpermissive]
+  102 |                  user_conn.send_text(msg->get_payload());
+      |                  ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from include/crow.h:15:
+include/crow/websocket.h:64:26: note:   in call to 'virtual void crow::websocket::connection::send_text(std::string)'
+   64 |             virtual void send_text(std::string msg) = 0;
+      |                          ^~~~~~~~~
+src/main.cpp: In function 'int main()':
+src/main.cpp:29:19: error: no matching function for call to 'crow::TaggedRule<>::websocket()'
+   29 |         .websocket()
+      |                   ^
+In file included from include/crow.h:20:
+include/crow/routing.h:546:29: note: candidate: 'template<class App> crow::WebSocketRule<App>& crow::RuleParameterTraits<T>::websocket(App*) [with T = crow::TaggedRule<>]'
+  546 |         WebSocketRule<App>& websocket(App* app)
+      |                             ^~~~~~~~~
+include/crow/routing.h:546:29: note:   template argument deduction/substitution failed:
+src/main.cpp:29:19: note:   candidate expects 1 argument, 0 provided
+   29 |         .websocket()
+      |                   ^
+/usr/include/c++/12/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::_Node_const_iterator<crow::websocket::connection&, true, true>':
+src/main.cpp:40:34:   required from here
+/usr/include/c++/12/bits/hashtable_policy.h:437:57: error: forming pointer to reference type 'std::__detail::_Node_const_iterator<crow::websocket::connection&, true, true>::value_type' {aka 'crow::websocket::connection&'}
+  437 |       typedef const value_type*                         pointer;
+      |                                                         ^~~~~~~
 src/main.cpp: In lambda function:
-src/main.cpp:92:38: warning: unused parameter 'req' [-Wunused-parameter]
-   92 |     ([&trading](const crow::request& req, const std::string& orderId) {
-      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cpp:40:34: error: no matching function for call to 'std::unordered_set<crow::websocket::connection&>::erase(crow::websocket::connection*)'
+   40 |                 pair.second.erase(&conn);  // Remove connection from each instrument's set
+      |                 ~~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/c++/12/bits/unordered_set.h:523:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::erase(const_iterator) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator]'
+  523 |       erase(const_iterator __position)
+      |       ^~~~~
+/usr/include/c++/12/bits/unordered_set.h:523:28: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'std::unordered_set<crow::websocket::connection&>::const_iterator' {aka 'std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator'}
+  523 |       erase(const_iterator __position)
+      |             ~~~~~~~~~~~~~~~^~~~~~~~~~
+/usr/include/c++/12/bits/unordered_set.h:528:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::erase(iterator) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator]'
+  528 |       erase(iterator __position)
+      |       ^~~~~
+/usr/include/c++/12/bits/unordered_set.h:528:22: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'std::unordered_set<crow::websocket::connection&>::iterator' {aka 'std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator'}
+  528 |       erase(iterator __position)
+      |             ~~~~~~~~~^~~~~~~~~~
+/usr/include/c++/12/bits/unordered_set.h:545:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type std::unordered_set<_Value, _Hash, _Pred, _Alloc>::erase(const key_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; size_type = long unsigned int; key_type = crow::websocket::connection&]'
+  545 |       erase(const key_type& __x)
+      |       ^~~~~
+/usr/include/c++/12/bits/unordered_set.h:545:29: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'crow::websocket::connection&'
+  545 |       erase(const key_type& __x)
+      |             ~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/12/bits/unordered_set.h:563:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::erase(const_iterator, const_iterator) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator]'
+  563 |       erase(const_iterator __first, const_iterator __last)
+      |       ^~~~~
+/usr/include/c++/12/bits/unordered_set.h:563:7: note:   candidate expects 2 arguments, 1 provided
+In file included from /usr/include/c++/12/bits/range_access.h:36,
+                 from /usr/include/c++/12/string:52:
+/usr/include/c++/12/initializer_list: In instantiation of 'class std::initializer_list<crow::websocket::connection&>':
+src/main.cpp:54:46:   required from here
+/usr/include/c++/12/initializer_list:54:33: error: forming pointer to reference type 'crow::websocket::connection&'
+   54 |       typedef const _E*         iterator;
+      |                                 ^~~~~~~~
+/usr/include/c++/12/initializer_list:55:33: error: forming pointer to reference type 'crow::websocket::connection&'
+   55 |       typedef const _E*         const_iterator;
+      |                                 ^~~~~~~~~~~~~~
 src/main.cpp: In lambda function:
-src/main.cpp:136:38: warning: unused parameter 'req' [-Wunused-parameter]
-  136 |     ([&trading](const crow::request& req) {
-      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
-In file included from src/main.cpp:11:
-src/deribit_ws_client.cpp: In lambda function:
-src/deribit_ws_client.cpp:104:70: warning: unused parameter 'hdl' [-Wunused-parameter]
-  104 |     client.set_message_handler([&client](websocketpp::connection_hdl hdl, message_ptr msg) {
-      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
-src/deribit_ws_client.cpp: In lambda function:
-src/deribit_ws_client.cpp:109:61: warning: unused parameter 'hdl' [-Wunused-parameter]
-  109 |     client.set_close_handler([](websocketpp::connection_hdl hdl) {
-      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
-src/main.cpp: In lambda function:
-src/main.cpp:92:38: warning: unused parameter 'req' [-Wunused-parameter]
-   92 |     ([&trading](const crow::request& req, const std::string& orderId) {
-      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
-src/main.cpp: In lambda function:
-src/main.cpp:136:38: warning: unused parameter 'req' [-Wunused-parameter]
-  136 |     ([&trading](const crow::request& req) {
-      |                 ~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cpp:54:46: error: no matching function for call to 'std::unordered_set<crow::websocket::connection&>::insert(crow::websocket::connection*)'
+   54 |             usersData[instrument_name].insert(&conn);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/c++/12/bits/unordered_set.h:469:9: note: candidate: 'template<class _InputIterator> void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator, _InputIterator) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>]'
+  469 |         insert(_InputIterator __first, _InputIterator __last)
+      |         ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:469:9: note:   template argument deduction/substitution failed:
+src/main.cpp:54:46: note:   candidate expects 2 arguments, 1 provided
+   54 |             usersData[instrument_name].insert(&conn);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+/usr/include/c++/12/bits/unordered_set.h:421:7: note: candidate: 'std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; value_type = crow::websocket::connection&]'
+  421 |       insert(const value_type& __x)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:421:32: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'crow::websocket::connection&'
+  421 |       insert(const value_type& __x)
+      |              ~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/12/bits/unordered_set.h:450:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const_iterator, const value_type&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator; value_type = crow::websocket::connection&]'
+  450 |       insert(const_iterator __hint, const value_type& __x)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:450:7: note:   candidate expects 2 arguments, 1 provided
+/usr/include/c++/12/bits/unordered_set.h:480:7: note: candidate: 'void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::initializer_list<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type>) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type = crow::websocket::connection&]'
+  480 |       insert(initializer_list<value_type> __l)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:480:43: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'std::initializer_list<crow::websocket::connection&>'
+  480 |       insert(initializer_list<value_type> __l)
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/12/bits/unordered_set.h:499:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert_return_type std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(node_type&&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; insert_return_type = std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::insert_return_type; node_type = std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::node_type]'
+  499 |       insert(node_type&& __nh)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:499:26: note:   no known conversion for argument 1 from 'crow::websocket::connection*' to 'std::unordered_set<crow::websocket::connection&>::node_type&&' {aka 'std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::node_type&&'}
+  499 |       insert(node_type&& __nh)
+      |              ~~~~~~~~~~~~^~~~
+/usr/include/c++/12/bits/unordered_set.h:504:7: note: candidate: 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const_iterator, node_type&&) [with _Value = crow::websocket::connection&; _Hash = std::hash<crow::websocket::connection&>; _Pred = std::equal_to<crow::websocket::connection&>; _Alloc = std::allocator<crow::websocket::connection&>; iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; const_iterator = std::__detail::_Insert_base<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::const_iterator; node_type = std::_Hashtable<crow::websocket::connection&, crow::websocket::connection&, std::allocator<crow::websocket::connection&>, std::__detail::_Identity, std::equal_to<crow::websocket::connection&>, std::hash<crow::websocket::connection&>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::node_type]'
+  504 |       insert(const_iterator, node_type&& __nh)
+      |       ^~~~~~
+/usr/include/c++/12/bits/unordered_set.h:504:7: note:   candidate expects 2 arguments, 1 provided
